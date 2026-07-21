@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-        content="SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation">
+    <meta name="description" content="SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SILICA & MIRAGE Project Page</title>
 
@@ -21,25 +20,50 @@
 
         .container {
             max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            margin: 40px auto;
+            padding: 40px 30px;
             background: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         h1 {
             font-size: 2.2rem;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             color: #1a1a1a;
+        }
+
+        .conference {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 15px;
         }
 
         .authors {
             text-align: center;
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             color: #555;
             font-style: italic;
+        }
+        
+        .authors a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .authors a:hover {
+            text-decoration: underline;
+        }
+
+        .affiliations {
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 30px;
         }
 
         .status-badge {
@@ -88,6 +112,11 @@
 
         .abstract h2 {
             margin-top: 0;
+            color: #1a1a1a;
+        }
+        
+        .abstract p {
+            text-align: justify;
         }
     </style>
 </head>
@@ -96,18 +125,24 @@
 
     <div class="container">
         <h1>SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation</h1>
-        <!-- <div class="authors">Anonymous Authors | Paper ID: [Insert ID]</div> -->
 
-        <!-- <div class="status-badge">Under Review - Double Blind</div> -->
-
-        <div class="conference"> IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026 </div>
-        <div class="authors"> <a href="https://scholar.google.com/citations?user=wqTCR1sAAAAJ&hl=en">Tarun R</a><sup>1</sup>, <a href="https://scholar.google.com/citations?user=KI2RjboAAAAJ&hl=en">Anuj Verma</a><sup>1</sup>, <a href="https://scholar.google.com/citations?user=XCF-6gcAAAAJ&hl=en">Laksh Nanwani</a><sup>1</sup>, <a href="https://scholar.google.com/citations?user=oVS3HHIAAAAJ&hl=en">Sourav Garg</a><sup>1</sup>,  <a href="https://scholar.google.co.in/citations?user=QDuPGHwAAAAJ&hl=en">Madhava Krishna</a><sup>1</sup> </div>
-        <div class="affiliations"> <sup>1</sup> RRC Lab, IIIT Hyderabad, India <br> <sup></div>
+        <div class="conference">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026</div>
+        
+        <div class="authors">
+            <a href="https://scholar.google.com/citations?user=wqTCR1sAAAAJ&hl=en" target="_blank">Tarun R</a><sup>1</sup>, 
+            <a href="https://scholar.google.com/citations?user=KI2RjboAAAAJ&hl=en" target="_blank">Anuj Verma</a><sup>1</sup>, 
+            <a href="https://scholar.google.com/citations?user=XCF-6gcAAAAJ&hl=en" target="_blank">Laksh Nanwani</a><sup>1</sup>, 
+            <a href="https://scholar.google.com/citations?user=oVS3HHIAAAAJ&hl=en" target="_blank">Sourav Garg</a><sup>1</sup>,  
+            <a href="https://scholar.google.co.in/citations?user=QDuPGHwAAAAJ&hl=en" target="_blank">Madhava Krishna</a><sup>1</sup>
+        </div>
+        
+        <div class="affiliations">
+            <sup>1</sup> RRC Lab, IIIT Hyderabad, India
+        </div>
 
         <div class="links">
-            <a href="https://github.com/rtarun1/Silica" class="link-button">Code - SILICA</a>
-            <a href="https://huggingface.co/datasets/rtarun1/mirage18k"
-                class="link-button">Dataset - MIRAGE-18k</a>
+            <a href="https://github.com/rtarun1/Silica" class="link-button" target="_blank">Code - SILICA</a>
+            <a href="https://huggingface.co/datasets/rtarun1/mirage18k" class="link-button" target="_blank">Dataset - MIRAGE-18k</a>
         </div>
 
         <section class="abstract">
