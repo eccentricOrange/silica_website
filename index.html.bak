@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SILICA & MIRAGE Project Page</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px 30px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .conference {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .authors {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #555;
+            font-style: italic;
+        }
+        
+        .authors a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .authors a:hover {
+            text-decoration: underline;
+        }
+
+        .affiliations {
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .status-badge {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 30px;
+            padding: 8px 15px;
+            background: #34495e;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .link-button {
+            padding: 10px 20px;
+            border: 2px solid #333;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .link-button:hover {
+            background: #333;
+            color: white;
+        }
+
+        .abstract {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #2ecc71;
+        }
+
+        .abstract h2 {
+            margin-top: 0;
+            color: #1a1a1a;
+        }
+        
+        .abstract p {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation</h1>
+
+        <div class="conference">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026</div>
+        
+        <div class="authors">
+            <a href="https://scholar.google.com/citations?user=wqTCR1sAAAAJ&hl=en" target="_blank">Tarun R</a><sup>1</sup>, 
+            <a href="https://scholar.google.com/citations?user=KI2RjboAAAAJ&hl=en" target="_blank">Anuj Verma</a><sup>1</sup>, 
+            <a href="https://scholar.google.com/citations?user=XCF-6gcAAAAJ&hl=en" target="_blank">Laksh Nanwani</a><sup>1</sup>, 
+            <a href="https://scholar.google.com/citations?user=oVS3HHIAAAAJ&hl=en" target="_blank">Sourav Garg</a><sup>1</sup>,  
+            <a href="https://scholar.google.co.in/citations?user=QDuPGHwAAAAJ&hl=en" target="_blank">Madhava Krishna</a><sup>1</sup>
+        </div>
+        
+        <div class="affiliations">
+            <sup>1</sup> Robotics Research Center (RRC), IIIT Hyderabad, India
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/rtarun1/Silica" class="link-button" target="_blank">Code - SILICA</a>
+            <a href="https://huggingface.co/datasets/rtarun1/mirage18k" class="link-button" target="_blank">Dataset - MIRAGE-18k</a>
+        </div>
+
+        <section class="abstract">
+            <h2>Abstract</h2>
+            <p>
+                Standard depth sensors systematically fail on transparent surfaces, creating corrupted 3D maps and severe
+                navigation hazards. While specialized hardware sensors can detect glass, they lack modularity and have
+                extensive hardware dependencies. Consequently, learning-based monocular depth estimation has emerged as a
+                compelling alternative. However, domain-specific glass-aware monocular depth estimators struggle with
+                unfamiliar indoor layouts; restricted by the severe scarcity of real-world glass depth annotations, they
+                fail to generalize zero-shot to new settings. This motivates us to explore whether the extensive priors
+                of text-to-image diffusion models can enable generalizable perception of transparent surfaces. We
+                introduce SILICA, a unified pipeline leveraging these priors to jointly predict glass segmentation and
+                glass-aware depth. This mutual information exchange establishes a robust spatial hierarchy, entirely
+                eliminating the need for paired real-world glass depth annotations. Subsequently, we use the predicted
+                segmentation mask to explicitly filter incorrect glass depth points from standard sensors, recovering
+                accurate metric glass depth for downstream 3D mapping and autonomous collision avoidance. Supported by
+                our novel Mirage 18k dataset, extensive experiments demonstrate that SILICA achieves remarkable zero-shot
+                transfer across diverse, unseen environments, outperforming state-of-the-art models by almost 20% and
+                setting a new benchmark for transparent surface perception.
+            </p>
+        </section>
+    </div>
+
+</body>
+
+</html>
