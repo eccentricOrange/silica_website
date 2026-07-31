@@ -193,9 +193,16 @@
     <div class="container is-max-desktop has-text-centered">
       <h2 class="title is-3">The SILICA Pipeline</h2>
       <img src="static/images/pipeline.png" alt="SILICA Pipeline Overview" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
+      
       <div class="content has-text-justified mt-5">
+        <h3 class="title is-4 has-text-centered">1. Training</h3>
         <p>
-          SILICA employs a shared U-Net architecture driven by Stable Diffusion priors to jointly predict glass segmentation and glass-aware monocular depth. By utilizing CLIP-conditioned cross-attention, the network explicitly routes task-specific text embeddings ("predict glass segmentation" and "predict depth map") into its deep feature space. This mechanism drives a robust mutual information transfer between real-world segmentation features and synthetic depth pathways, entirely bypassing the need for paired real-world glass depth annotations. During real-world deployment, the predicted binary mask is used to explicitly filter corrupted readings from standard depth sensors. The remaining reliable non-glass points allow us to precisely align the affine-invariant predictions into accurate, scale-aware metric depth.
+          SILICA establishes a robust spatial hierarchy by learning from a mixture of modalities. For segmentation, the model is trained on diverse real-world glass segmentation datasets, aggregating samples from our custom Mirage 18k dataset along with 3DRef, Trans10k, GDD, GSD-S, and GW-Depth[cite: 5]. For depth estimation, we utilize the synthetic Hypersim dataset, completely bypassing the need for explicit real-world glass depth annotations[cite: 5]. To manage this dual-task framework, SILICA injects task-specific text embeddings directly into the U-Net's cross-attention layers using CLIP[cite: 5]. This explicit routing drives a mutually beneficial information exchange, enabling the network to learn accurate depth predictions for transparent surfaces solely from diffusion priors[cite: 5].
+        </p>
+
+        <h3 class="title is-4 has-text-centered">2. Inference</h3>
+        <p>
+          During inference, a single input RGB image is processed through the network to simultaneously predict a binary glass segmentation mask and a glass-aware, affine-invariant depth map[cite: 5]. To recover real-world metric scale, we retrieve noisy depth samples from a standard depth sensor and explicitly filter out the corrupted readings on transparent surfaces using our predicted segmentation mask[cite: 5]. Finally, a linear least-squares optimization is solved over the remaining reliable background points to align the affine-invariant predictions, successfully outputting an accurate, artifact-free 3D metric depth map for the entire scene[cite: 5].
         </p>
       </div>
     </div>
