@@ -28,17 +28,6 @@
   <meta property="article:section" content="Robotics">
   <meta property="article:tag" content="Robotic Perception">
 
-  <!-- Twitter -->
-  <!-- <meta name="twitter:card" content="summary_large_image"> -->
-  <!-- PLACEHOLDER: Replace with your lab/institution Twitter handle -->
-  <!-- <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE"> -->
-  <!-- PLACEHOLDER: Replace with first author's Twitter handle -->
-  <!-- <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE"> -->
-  <!-- <meta name="twitter:title" content="SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation"> -->
-  <!-- <meta name="twitter:description" content="SILICA leverages diffusion priors to jointly predict glass segmentation and glass-aware depth, eliminating the need for paired real-world glass depth annotations."> -->
-  <!-- <meta name="twitter:image" content="https://silica-mirage.github.io/static/images/social_preview.png"> -->
-  <!-- <meta name="twitter:image:alt" content="SILICA - Research Preview"> -->
-
   <!-- Academic/Research Specific -->
   <meta name="citation_title" content="SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation">
   <meta name="citation_author" content="R, Tarun">
@@ -64,8 +53,8 @@
   <title>SILICA: Glass Detection</title>
   
   <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/rrc.png">
+  <link rel="apple-touch-icon" href="static/images/rrc.png">
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -129,7 +118,6 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 
-                <!-- PLACEHOLDER: arXiv Paper ID -->
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2607.24249" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="ai ai-arxiv"></i></span>
@@ -137,7 +125,6 @@
                   </a>
                 </span>
 
-                <!-- Code Link -->
                 <span class="link-block">
                   <a href="https://github.com/rtarun1/Silica" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fab fa-github"></i></span>
@@ -145,7 +132,6 @@
                   </a>
                 </span>
 
-                <!-- Dataset Link -->
                 <span class="link-block">
                   <a href="https://huggingface.co/datasets/rtarun1/mirage18k" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">🤗</span>
@@ -153,7 +139,6 @@
                   </a>
                 </span>
 
-                <!-- PLACEHOLDER: Hugging Face Model -->
                 <span class="link-block">
                   <a href="https://huggingface.co/rtarun1/silica-v1-0" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">🤗</span>
@@ -169,15 +154,19 @@
     </div>
   </section>
 
-<!-- Teaser Media (e.g., Robot Wheelchair avoids glass) -->
+<!-- Teaser Video & Extended Link -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- PLACEHOLDER: Add your teaser video of the wheelchair navigating safely -->
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/G5xC2R-3i28?si=TPVhDIzr8pb18Eiq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <h2 class="subtitle has-text-centered">
+    <div class="hero-body has-text-centered">
+      <div class="publication-video" style="display: flex; justify-content: center; margin-bottom: 20px;">
+        <iframe width="840" height="472" src="https://www.youtube.com/embed/G5xC2R-3i28?si=TPVhDIzr8pb18Eiq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width: 100%; border-radius: 8px;"></iframe>
+      </div>
+      <h2 class="subtitle has-text-centered mb-4">
         SILICA overcomes inherent depth sensor limitations by jointly segmenting glass and predicting accurate metric depth, enabling autonomous collision avoidance in real-world environments.
       </h2>
+      <p class="is-size-5">
+        <strong>Want to see more?</strong> Watch our <a href="YOUR_LONG_VIDEO_LINK_HERE" target="_blank">Extended Video Presentation</a> for a deeper dive into the methodology and additional real-world deployment footage.
+      </p>
     </div>
   </div>
 </section>
@@ -198,16 +187,56 @@
   </div>
 </section>
 
-<!-- Pipeline Image -->
+<!-- Pipeline Image & Description -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop has-text-centered">
       <h2 class="title is-3">The SILICA Pipeline</h2>
-      <!-- PLACEHOLDER: Add Figure 2 (Pipeline Architecture) -->
-      <img src="static/images/pipeline_fig2.jpg" alt="SILICA Pipeline Overview" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
-      <h2 class="subtitle has-text-centered mt-4">
-        Our framework employs a shared U-Net architecture for joint glass segmentation and monocular depth estimation, establishing a robust spatial hierarchy via CLIP-conditioned cross-attention.
-      </h2>
+      <img src="static/images/pipeline.png" alt="SILICA Pipeline Overview" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
+      <div class="content has-text-justified mt-5">
+        <p>
+          SILICA employs a shared U-Net architecture driven by Stable Diffusion priors to jointly predict glass segmentation and glass-aware monocular depth. By utilizing CLIP-conditioned cross-attention, the network explicitly routes task-specific text embeddings ("predict glass segmentation" and "predict depth map") into its deep feature space. This mechanism drives a robust mutual information transfer between real-world segmentation features and synthetic depth pathways, entirely bypassing the need for paired real-world glass depth annotations. During real-world deployment, the predicted binary mask is used to explicitly filter corrupted readings from standard depth sensors. The remaining reliable non-glass points allow us to precisely align the affine-invariant predictions into accurate, scale-aware metric depth.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dataset Section -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">The Mirage-18k Dataset</h2>
+      <img src="static/images/dataset-protocol.png" alt="Mirage-18k Dataset Protocol" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
+      <div class="content has-text-justified mt-5">
+        <p>
+          To bridge the massive domain gap in transparent surface perception and strictly evaluate zero-shot transfer, we introduce the <strong>Mirage-18k Dataset</strong>. It contains over 18,000 highly diverse indoor RGB images paired with manually annotated binary glass segmentation masks. 
+        </p>
+        <p>
+          Because standard depth sensors fail on glass, acquiring ground-truth metric depth for evaluation required a specialized collection protocol. We recorded stationary scenes twice: first with temporary opaque markers placed on the glass panes to capture reliable metric depth, and then a second time from the exact same pose after the markers were removed. By solving an overdetermined system via least-squares optimization in inverse depth space, we successfully reconstructed dense, artifact-free metric depth maps for transparent surfaces.
+        </p>
+        <div class="has-text-centered mt-4">
+          <a href="https://huggingface.co/datasets/rtarun1/mirage18k" target="_blank" class="button is-dark is-rounded">
+            <span class="icon">🤗</span>
+            <span>Explore Mirage-18k on Hugging Face</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Qualitative Comparison Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Qualitative Comparison with State-of-the-Art</h2>
+      <img src="static/images/results.png" alt="SILICA Qualitative Comparison" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
+      <div class="content has-text-justified mt-5">
+        <p>
+          SILICA consistently delivers precise joint glass segmentation and glass-aware depth estimation, even in highly challenging scenarios. When compared to current State-of-the-Art (SoTA) depth and segmentation models, SILICA maintains its performance in scenes with busy backgrounds, extreme close-ups near glass windows, and half-open glass doors. While other methods often hallucinate flat glass or miss structural nuances entirely due to background saliency, our joint prediction approach correctly identifies and predicts accurate depth for complex open and closed door configurations.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -215,50 +244,28 @@
 <!-- Qualitative Results Carousel -->
 <section class="hero is-small is-light">
   <div class="hero-body">
-    <div class="container">
-        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Zero-Shot In-The-Wild Performance</h2>
+        <p class="has-text-centered mb-5">
+          SILICA demonstrates exceptional zero-shot generalization in highly complex, unseen environments. By establishing a strict spatial foreground-background hierarchy, it successfully resolves severe visual ambiguities—such as busy backgrounds behind glass and half-open transparent doors—outperforming current state-of-the-art models by up to 20%.
+        </p>
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- PLACEHOLDER: Add Figure 5 cuts (Shopping Mall) -->
-        <img src="static/images/qualitative_mall.jpg" alt="Results in a crowded shopping mall" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Crowded shopping mall: SILICA successfully ignores dynamic obstacles and accurately segments the glass.
+      <div class="item">
+        <!-- Constraining height to keep the carousel well-proportioned -->
+        <img src="static/images/in-the-wild-1.png" alt="In the wild performance 1" loading="lazy" style="max-height: 450px; width: auto; margin: 0 auto; display: block;" />
+        <h2 class="subtitle has-text-centered mt-3">
+          Robust depth recovery and precise segmentation in complex, unseen indoor layouts.
         </h2>
       </div>
       <div class="item">
-        <!-- PLACEHOLDER: Add Figure 5 cuts (Glass Door) -->
-        <img src="static/images/qualitative_door.jpg" alt="Results on a half-open glass door" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Half-opened glass door: SILICA accurately predicts surface depth and identifies open spaces.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- PLACEHOLDER: Add Figure 4 (Depth Acquisition) -->
-        <img src="static/images/ground_truth_depth.jpg" alt="Mirage 18k Dataset Depth Acquisition" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Mirage 18k Dataset: Dense metric depth maps constructed via our inverse depth space optimization.
+        <img src="static/images/in-the-wild-2.png" alt="In the wild performance 2" loading="lazy" style="margin: 0 auto; display: block;" />
+        <h2 class="subtitle has-text-centered mt-3">
+          Accurate obstacle avoidance and mapping enabled by SILICA's filtered glass-aware depth.
         </h2>
       </div>
     </div>
   </div>
 </div>
-</section>
-
-<!-- YouTube video / Hardware Demo -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Autonomous Wheelchair Navigation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="publication-video">
-            <!-- PLACEHOLDER: Replace with your YouTube video ID of real-world RTAB-Map runs -->
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!--BibTex citation -->
