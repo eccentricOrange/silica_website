@@ -161,9 +161,6 @@
       <div class="publication-video" style="display: flex; justify-content: center; margin-bottom: 20px;">
         <iframe width="840" height="472" src="https://www.youtube.com/embed/G5xC2R-3i28?si=TPVhDIzr8pb18Eiq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width: 100%; border-radius: 8px;"></iframe>
       </div>
-      <h2 class="subtitle has-text-centered mb-4">
-        SILICA overcomes inherent depth sensor limitations by jointly segmenting glass and predicting accurate metric depth, enabling autonomous collision avoidance in real-world environments.
-      </h2>
     </div>
   </div>
 </section>
@@ -194,7 +191,7 @@
       <div class="content has-text-justified mt-5">
         <h3 class="title is-4 has-text-centered">1. Training</h3>
         <p>
-          SILICA establishes a robust spatial hierarchy by learning from a mixture of modalities. For segmentation, the model is trained on diverse real-world glass segmentation datasets, aggregating samples from our custom Mirage 18k dataset along with <a href="https://doi.org/10.1109/3DV62453.2024.00009">3DRef</a>, <a href="https://doi.prg/10.1007/978-3-030-58601-0_41">Trans10k</a>, <a href="https://dor.org/10.1109/CVPR42600.2020.00374">GDD</a>, <a href="https://doi.org/10.52202/068431-1634">GSD-S</a>, and <a href="https://doi.org/10.1109/TPAMI.2023.3308551">GW-Depth</a>. For depth estimation, we utilize the synthetic Hypersim dataset, completely bypassing the need for explicit real-world glass depth annotations. To manage this dual-task framework, SILICA injects task-specific text embeddings directly into the U-Net's cross-attention layers using CLIP. This explicit routing drives a mutually beneficial information exchange, enabling the network to learn accurate depth predictions for transparent surfaces solely from diffusion priors.
+          SILICA establishes a robust spatial hierarchy by learning from a mixture of modalities. For segmentation, the model is trained on diverse real-world glass segmentation datasets, aggregating samples from our custom Mirage 18k dataset along with <a href="https://doi.org/10.1109/3DV62453.2024.00009">3DRef</a>, <a href="https://doi.org/10.1007/978-3-030-58601-0_41">Trans10k</a>, <a href="https://doi.org/10.1109/CVPR42600.2020.00374">GDD</a>, <a href="https://doi.org/10.52202/068431-1634">GSD-S</a>, and <a href="https://doi.org/10.1109/TPAMI.2023.3308551">GW-Depth</a>. For depth estimation, we utilize the synthetic Hypersim dataset, completely bypassing the need for explicit real-world glass depth annotations. To manage this dual-task framework, SILICA injects task-specific text embeddings directly into the U-Net's cross-attention layers using CLIP. This explicit routing drives a mutually beneficial information exchange, enabling the network to learn accurate depth predictions for transparent surfaces solely from diffusion priors.
         </p>
 
         <h3 class="title is-4 has-text-centered">2. Inference</h3>
