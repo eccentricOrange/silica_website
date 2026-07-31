@@ -164,9 +164,6 @@
       <h2 class="subtitle has-text-centered mb-4">
         SILICA overcomes inherent depth sensor limitations by jointly segmenting glass and predicting accurate metric depth, enabling autonomous collision avoidance in real-world environments.
       </h2>
-      <p class="is-size-5">
-        <strong>Want to see more?</strong> Watch our <a href="https://youtu.be/qjk-7PltUyQ" target="_blank">Extended Video Presentation</a>.
-      </p>
     </div>
   </div>
 </section>
@@ -197,12 +194,12 @@
       <div class="content has-text-justified mt-5">
         <h3 class="title is-4 has-text-centered">1. Training</h3>
         <p>
-          SILICA establishes a robust spatial hierarchy by learning from a mixture of modalities. For segmentation, the model is trained on diverse real-world glass segmentation datasets, aggregating samples from our custom Mirage 18k dataset along with 3DRef, Trans10k, GDD, GSD-S, and GW-Depth[cite: 5]. For depth estimation, we utilize the synthetic Hypersim dataset, completely bypassing the need for explicit real-world glass depth annotations[cite: 5]. To manage this dual-task framework, SILICA injects task-specific text embeddings directly into the U-Net's cross-attention layers using CLIP[cite: 5]. This explicit routing drives a mutually beneficial information exchange, enabling the network to learn accurate depth predictions for transparent surfaces solely from diffusion priors[cite: 5].
+          SILICA establishes a robust spatial hierarchy by learning from a mixture of modalities. For segmentation, the model is trained on diverse real-world glass segmentation datasets, aggregating samples from our custom Mirage 18k dataset along with <a href="https://doi.org/10.1109/3DV62453.2024.00009">3DRef</a>, <a href="https://doi.prg/10.1007/978-3-030-58601-0_41">Trans10k</a>, <a href="https://dor.org/10.1109/CVPR42600.2020.00374">GDD</a>, <a href="https://doi.org/10.52202/068431-1634">GSD-S</a>, and <a href="https://doi.org/10.1109/TPAMI.2023.3308551">GW-Depth</a>. For depth estimation, we utilize the synthetic Hypersim dataset, completely bypassing the need for explicit real-world glass depth annotations. To manage this dual-task framework, SILICA injects task-specific text embeddings directly into the U-Net's cross-attention layers using CLIP. This explicit routing drives a mutually beneficial information exchange, enabling the network to learn accurate depth predictions for transparent surfaces solely from diffusion priors.
         </p>
 
         <h3 class="title is-4 has-text-centered">2. Inference</h3>
         <p>
-          During inference, a single input RGB image is processed through the network to simultaneously predict a binary glass segmentation mask and a glass-aware, affine-invariant depth map[cite: 5]. To recover real-world metric scale, we retrieve noisy depth samples from a standard depth sensor and explicitly filter out the corrupted readings on transparent surfaces using our predicted segmentation mask[cite: 5]. Finally, a linear least-squares optimization is solved over the remaining reliable background points to align the affine-invariant predictions, successfully outputting an accurate, artifact-free 3D metric depth map for the entire scene[cite: 5].
+          During inference, a single input RGB image is processed through the network to simultaneously predict a binary glass segmentation mask and a glass-aware, affine-invariant depth map. To recover real-world metric scale, we retrieve noisy depth samples from a standard depth sensor and explicitly filter out the corrupted readings on transparent surfaces using our predicted segmentation mask. Finally, a linear least-squares optimization is solved over the remaining reliable background points to align the affine-invariant predictions, successfully outputting an accurate, artifact-free 3D metric depth map for the entire scene.
         </p>
       </div>
     </div>
@@ -260,15 +257,9 @@
       <div class="item">
         <!-- Constraining height to keep the carousel well-proportioned -->
         <img src="static/images/in-the-wild-1.jpg" alt="In the wild performance 1" loading="lazy" style="max-height: 450px; width: auto; margin: 0 auto; display: block;" />
-        <h2 class="subtitle has-text-centered mt-3">
-          Robust depth recovery and precise segmentation in complex, unseen indoor layouts.
-        </h2>
       </div>
       <div class="item">
         <img src="static/images/in-the-wild-2.jpg" alt="In the wild performance 2" loading="lazy" style="margin: 0 auto; display: block;" />
-        <h2 class="subtitle has-text-centered mt-3">
-          Accurate obstacle avoidance and mapping enabled by SILICA's filtered glass-aware depth.
-        </h2>
       </div>
     </div>
   </div>
