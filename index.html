@@ -19,7 +19,7 @@
   <meta property="og:description" content="SILICA leverages diffusion priors to jointly predict glass segmentation and glass-aware depth, eliminating the need for paired real-world glass depth annotations.">
   <meta property="og:url" content="https://silica-mirage.github.io/">
   <!-- PLACEHOLDER: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://silica-mirage.github.io/static/images/teaser.png">
+  <meta property="og:image" content="https://silica-mirage.github.io/static/images/teaser.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="SILICA - Research Preview">
@@ -53,8 +53,8 @@
   <title>SILICA: Glass Detection</title>
   
   <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/rrc.png">
-  <link rel="apple-touch-icon" href="static/images/rrc.png">
+  <link rel="icon" type="image/x-icon" href="static/images/rrc.jpg">
+  <link rel="apple-touch-icon" href="static/images/rrc.jpg">
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -192,7 +192,7 @@
   <div class="hero-body">
     <div class="container is-max-desktop has-text-centered">
       <h2 class="title is-3">The SILICA Pipeline</h2>
-      <img src="static/images/pipeline.png" alt="SILICA Pipeline Overview" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
+      <img src="static/images/pipeline.jpg" alt="SILICA Pipeline Overview" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
       
       <div class="content has-text-justified mt-5">
         <h3 class="title is-4 has-text-centered">1. Training</h3>
@@ -214,7 +214,7 @@
   <div class="hero-body">
     <div class="container is-max-desktop has-text-centered">
       <h2 class="title is-3">The Mirage-18k Dataset</h2>
-      <img src="static/images/dataset-protocol.png" alt="Mirage-18k Dataset Protocol" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
+      <img src="static/images/dataset-protocol.jpg" alt="Mirage-18k Dataset Protocol" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
       <div class="content has-text-justified mt-5">
         <p>
           To bridge the massive domain gap in transparent surface perception and strictly evaluate zero-shot transfer, we introduce the <strong>Mirage-18k Dataset</strong>. It contains over 18,000 highly diverse indoor RGB images paired with manually annotated binary glass segmentation masks. 
@@ -238,7 +238,7 @@
   <div class="hero-body">
     <div class="container is-max-desktop has-text-centered">
       <h2 class="title is-3">Qualitative Comparison with State-of-the-Art</h2>
-      <img src="static/images/results.png" alt="SILICA Qualitative Comparison" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
+      <img src="static/images/results.jpg" alt="SILICA Qualitative Comparison" loading="lazy" style="max-width: 100%; border-radius: 8px;" />
       <div class="content has-text-justified mt-5">
         <p>
           SILICA consistently delivers precise joint glass segmentation and glass-aware depth estimation, even in highly challenging scenarios. When compared to current State-of-the-Art (SoTA) depth and segmentation models, SILICA maintains its performance in scenes with busy backgrounds, extreme close-ups near glass windows, and half-open glass doors. While other methods often hallucinate flat glass or miss structural nuances entirely due to background saliency, our joint prediction approach correctly identifies and predicts accurate depth for complex open and closed door configurations.
@@ -259,13 +259,13 @@
       <div id="results-carousel" class="carousel results-carousel">
       <div class="item">
         <!-- Constraining height to keep the carousel well-proportioned -->
-        <img src="static/images/in-the-wild-1.png" alt="In the wild performance 1" loading="lazy" style="max-height: 450px; width: auto; margin: 0 auto; display: block;" />
+        <img src="static/images/in-the-wild-1.jpg" alt="In the wild performance 1" loading="lazy" style="max-height: 450px; width: auto; margin: 0 auto; display: block;" />
         <h2 class="subtitle has-text-centered mt-3">
           Robust depth recovery and precise segmentation in complex, unseen indoor layouts.
         </h2>
       </div>
       <div class="item">
-        <img src="static/images/in-the-wild-2.png" alt="In the wild performance 2" loading="lazy" style="margin: 0 auto; display: block;" />
+        <img src="static/images/in-the-wild-2.jpg" alt="In the wild performance 2" loading="lazy" style="margin: 0 auto; display: block;" />
         <h2 class="subtitle has-text-centered mt-3">
           Accurate obstacle avoidance and mapping enabled by SILICA's filtered glass-aware depth.
         </h2>
@@ -285,11 +285,14 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@inproceedings{tarun2026silica,
-  title={SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation},
-  author={R, Tarun and Verma, Anuj and Nanwani, Laksh and Garg, Sourav and Krishna, K. Madhava},
-  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year={2026}
+      <pre id="bibtex-code"><code>@misc{r2026silicarepurposingdiffusionpriors,
+      title={SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation}, 
+      author={Tarun R and Anuj Verma and Laksh Nanwani and Sourav Garg and K. Madhava Krishna},
+      year={2026},
+      eprint={2607.24249},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2607.24249}, 
 }</code></pre>
     </div>
 </section>
